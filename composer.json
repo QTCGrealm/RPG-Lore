@@ -1,0 +1,120 @@
+{
+    "name": "owlchester/kanka",
+    "description": "The Kanka RPG and worldbuilding tool",
+    "keywords": [
+        "campaign",
+        "rpg",
+        "worldbuilding",
+        "kanka",
+        "dnd"
+    ],
+    "license": "proprietary",
+    "type": "project",
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "ext-zip": "*",
+        "aws/aws-sdk-php": "^3.276",
+        "bacon/bacon-qr-code": "^3.0",
+        "binarytorch/larecipe": "^2.0",
+        "caseyamcl/toc": "^4.0",
+        "chriskonnertz/string-calc": "^2.0",
+        "dompdf/dompdf": "^3.0",
+        "enshrined/svg-sanitize": "^0.21",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "ilestis/kanka-dnd5e-monster": "^5.0",
+        "intervention/image": "^3.10",
+        "laravel/cashier": "^15.0",
+        "laravel/framework": "^11.0",
+        "laravel/pail": "^1.1",
+        "laravel/passport": "^12.0",
+        "laravel/scout": "^10.5",
+        "laravel/socialite": "^5.0",
+        "laravel/ui": "^4.6",
+        "league/flysystem-aws-s3-v3": "^3.5",
+        "league/html-to-markdown": "^5.1",
+        "livewire/livewire": "^3.4",
+        "mailerlite/mailerlite-php": "^1.0",
+        "mcamara/laravel-localization": "^2.0",
+        "meilisearch/meilisearch-php": "^1.4",
+        "orhanerday/open-ai": "^4.7",
+        "owlchester/laravel-translation-manager": "^11.0.3",
+        "pragmarx/google2fa-laravel": "^2.2",
+        "predis/predis": "^2.0",
+        "sentry/sentry-laravel": "^4.0",
+        "sergej-kurakin/diceroller": "^2.0",
+        "spatie/laravel-backup": "^8.0",
+        "srmklive/paypal": "^3.0",
+        "staudenmeir/laravel-adjacency-list": "^1.0",
+        "staudenmeir/laravel-cte": "^1.0",
+        "stechstudio/laravel-zipstream": "^5.0",
+        "stevebauman/purify": "6.2.*",
+        "symfony/http-client": "^7.2",
+        "symfony/mailgun-mailer": "^7.1"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "fakerphp/faker": "^1.22",
+        "larastan/larastan": "^2.0",
+        "laravel/pint": "^1.10",
+        "laravel/sail": "^1.14",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^8.1",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-laravel": "^2.4",
+        "phpmd/phpmd": "^2.13",
+        "phpstan/phpstan": "^1.0",
+        "spatie/laravel-ignition": "^2.4",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "laravel/telescope"
+            ]
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=phpcs.xml",
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ],
+        "test:types": "phpstan analyse --ansi --memory-limit 1G",
+        "test:types-clear": "phpstan clear-result-cache",
+        "test:pest": "vendor/bin/pest",
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan ide-helper:generate",
+            "@php artisan ide-helper:meta"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    }
+}

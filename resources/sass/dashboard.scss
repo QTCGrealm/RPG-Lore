@@ -1,0 +1,12 @@
+.widget {
+    table {
+        max-width: 100% !important;
+        word-break: break-all;
+    }
+    iframe, img {
+        max-width: 100% !important;
+    }
+    .entity-attributes {
+        min-height: 24rem;
+    }
+}

@@ -1,0 +1,30 @@
+/**
+ * Conversations
+ * Deprecated module
+ */
+
+/**
+ * Conversations
+ */
+.box-conversation {
+    .box-comments {
+        max-height: 65vh;
+        background-color: unset;
+
+        .box-comment {
+            border-bottom: none;
+
+            &:hover {
+                .message-options {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .message-first {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+}
+

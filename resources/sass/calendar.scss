@@ -1,0 +1,26 @@
+/**
+ * Calendars
+ */
+.bg-season {
+    --tw-bg-opacity: .5;
+    background-color: hsl(var(--a)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--ac)/var(--tw-text-opacity));
+}
+.bg-week {
+    --tw-bg-opacity: .3;
+    background-color: hsl(var(--a)/var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--ac)/var(--tw-text-opacity));
+}
+
+.calendar tbody td {
+    .julian-number {
+        display: var(--calendar-julian, none);
+    }
+
+    .day-number {
+        display: var(--calendar-monthday, inline);
+    }
+}
+

@@ -1,0 +1,38 @@
+.live-edit {
+    min-width: 1rem;
+    min-height: 1rem;
+    display: inline-block;
+}
+.live-edit-parsed {
+    cursor: pointer;
+
+    &:after {
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 6 Pro";
+        font-weight: 900;
+        font-style: normal;
+        font-variant: normal;
+        line-height: 1;
+        text-rendering: auto;
+        color: var(--link-hover);
+    }
+
+    &:hover {
+        &:after {
+            content: " \f303";
+        }
+    }
+}
+.live-edit.empty-value {
+    width: 24px;
+    display: inline-block;
+    --tw-border-opacity: .2;
+    border-bottom: 1px dotted hsl(var(--bc)/var(--tw-border-opacity));
+}
+
+/** Mobile support **/
+@media(max-width: 767px) {
+    .live-edit-parsed:after {
+        content: " \f303";
+    }
+}

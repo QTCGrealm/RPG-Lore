@@ -1,0 +1,44 @@
+/**
+ * Timelines
+ */
+
+.timeline > li > i:is(.ra, .fa, .fab, .far, .fas, .fa-solid, .fa-regular, .fa-brands, .fa-thin, .fa-duotone) {
+    line-height: 30px;
+    --tw-text-opacity: 1;
+    color: hsl(var(--bc)/var(--tw-text-opacity));
+    --tw-background-opacity: 1;
+    background: hsl(var(--b1)/var(--tw-background-opacity));
+    left: 18px;
+}
+
+
+/*
+ * Component: Timeline
+ * -------------------
+ */
+.timeline > li {
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: hsl(var(--b1)/1);
+        left: 31px;
+        margin: 0;
+        border-radius: 2px;
+    }
+
+    &:last-of-type {
+        &:before {
+            content: ' ';
+            display: table;
+        }
+    }
+
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
